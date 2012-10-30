@@ -1,0 +1,24 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/gist/3936653/f286cad5ec5bad83a16f8357f25f52ab44c8944b/nwc_comboValidator.js"></script>
+<script type="text/javascript">
+$(function(){
+	var firstName = new nwc_comboValidator('firstName',true,'First Name','first name field');
+	var midName = new nwc_comboValidator('midName',false,'Middle Name','middle name field');
+	$('#btnValidate').click(function()
+	{
+		$('.errMsg').empty();
+		$('form[name="unique"]').submit();
+	});
+});
+</script>
+</head>
+<body>
+This example need the firstname field should be mandatory. The placeholder is controlled by javascript. All these values are initialized in an object to a class that determine whether the field is mandatory. This will be highly helpful for html versions below html5.
+<br />
+<form name="unique" action="http://www.newwebcode.com">
+<input type="text" id="firstName" value="First Name" /><input type="text" id="midName" />
+<input id="btnValidate" type="button" value="validate" />
+</form>
+<br  />
+<div class="errMsg"></div>
+
