@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>PlaceHolder &amp; Mandatory Field Validator</title>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://raw.github.com/gist/3936653/f286cad5ec5bad83a16f8357f25f52ab44c8944b/nwc_comboValidator.js"></script>
+<script type="text/javascript" src="../../nwc_jquery_snippets/nwc_comboValidator-min.js"></script>
 <script type="text/javascript">
 $(function(){
 	var firstName = new nwc_comboValidator('firstName',true,'First Name','first name field');
@@ -12,16 +12,19 @@ $(function(){
 	$('#btnValidate').click(function()
 	{
 		$('.errMsg').empty();
-		$('form[name="unique"]').submit();
+		$('form[name="nwc_comboValidator_form"]').submit();
 	});
 });
 </script>
 </head>
 <body>
-This example need the firstname field should be mandatory. The placeholder is controlled by javascript. All these values are initialized in an object to a class that determine whether the field is mandatory. This will be highly helpful for html versions below html5.
+<p>There are two text fields below, the first name is expected as a mandatory field. The middle name is not mandatory.</p>
+<p>On hit of Validate button, it will check if the mandatory field has value, if so it will submit the form</p>
+<p>Error message will be shown at the bottom of the page</p>
+<p>In addition to the mandatory check there is another parameter to set the placeholder value to the textfield</p>
 <br />
-<form name="unique" action="http://www.newwebcode.com">
-<input type="text" id="firstName" value="First Name" /><input type="text" id="midName" />
+<form name="nwc_comboValidator_form" action="http://www.newwebcode.com">
+<input type="text" id="firstName"/><input type="text" id="midName" />
 <input id="btnValidate" type="button" value="validate" />
 </form>
 <br  />
