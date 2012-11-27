@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Email Validator</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var userEmail = nwc_emailValidator('userEmail','Please enter valid Email. This is mandatory.');
+	var userEmail2 = nwc_emailValidator('userEmail2', 'Please enter valid Email. Anyhow this is optional.');
+});
+var nwc_emailValidator = function(inputName, errMessage)
+{
+	emailPattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,3})?$/;
+	$('input[name="'+inputName+'"]').blur(function(){
+		$('input[name="'+inputName+'"]').next('.invalidEmailErrMsg').hide();
+		if(!emailPattern.test($('input[name="'+inputName+'"]').val()))
+			$('input[name="'+inputName+'"]').after('<span class="invalidEmailErrMsg">'+errMessage+'</span>');
+	});
+}
+</script>
+</head>
+<body>
+<input type="text" name="userEmail" value="" /><br />
+<input type="text" name="userEmail2" value=""/>
+</body>
+</html>

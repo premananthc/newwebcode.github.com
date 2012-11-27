@@ -1,0 +1,27 @@
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;title&gt;Email Validator&lt;/title&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(function(){
+	var userEmail = nwc_emailValidator(&#039;userEmail&#039;,&#039;Please enter valid Email. This is mandatory.&#039;);
+	var userEmail2 = nwc_emailValidator(&#039;userEmail2&#039;, &#039;Please enter valid Email. Anyhow this is optional.&#039;);
+});
+var nwc_emailValidator = function(inputName, errMessage)
+{
+	emailPattern = /^([w-.]+@([w-]+.)+[w-]{2,3})?$/;
+	$(&#039;input[name=&quot;&#039;+inputName+&#039;&quot;]&#039;).blur(function(){
+		$(&#039;input[name=&quot;&#039;+inputName+&#039;&quot;]&#039;).next(&#039;.invalidEmailErrMsg&#039;).hide();
+		if(!emailPattern.test($(&#039;input[name=&quot;&#039;+inputName+&#039;&quot;]&#039;).val()))
+			$(&#039;input[name=&quot;&#039;+inputName+&#039;&quot;]&#039;).after(&#039;&lt;span class=&quot;invalidEmailErrMsg&quot;&gt;&#039;+errMessage+&#039;&lt;/span&gt;&#039;);
+	});
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type=&quot;text&quot; name=&quot;userEmail&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;input type=&quot;text&quot; name=&quot;userEmail2&quot; value=&quot;&quot;/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
