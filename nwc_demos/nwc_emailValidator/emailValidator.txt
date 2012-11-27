@@ -14,7 +14,6 @@ $(function(){
 &lt;/head&gt;
 &lt;body&gt;
 &lt;p&gt;Enter primary email: &lt;input type=&quot;text&quot; name=&quot;userEmail&quot; value=&quot;&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;Enter secondary email:&lt;input type=&quot;text&quot; name=&quot;userEmail2&quot; value=&quot;&quot;/&gt;&lt;/p&gt;
-&lt;p&gt;*the emails entered here are for your testing only and are not captured by us.&lt;/p&gt;
+&lt;p&gt;Enter secondary email: &lt;input type=&quot;text&quot; name=&quot;userEmail2&quot; value=&quot;&quot;/&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
