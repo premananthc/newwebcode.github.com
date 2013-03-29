@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dynamic Vertical Middle</title>
+<style>
+.container {
+	width: 500px;
+	border: 1px solid #CCC;
+	height: 200px;
+	display: table;
+}
+.container-title {
+	padding:0px 10px;
+	width: 200px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.container-image-holders {
+	width: 300px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.container-image-holders div {
+	float: left;
+	margin: 0px 10px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align:center;
+}
+.container-image-holders div p{
+	padding:0px;
+	margin:0px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div class="container-title">
+        <div>Thumbnails</div>
+    </div>
+    <div class="container-image-holders">
+        <div>
+            <p>Chart</p>
+            <img src="images/chart.png"/> </div>
+        <div>
+            <p>Comments</p>
+            <img src="images/comments.png"/> </div>
+        <div>
+            <p>Home</p>
+            <img src="images/home.png"/> </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="container-title">
+        <div>Thumbnails - long title that uses the same class</div>
+    </div>
+    <div class="container-image-holders">
+        <div>
+            <p>Chart</p>
+            <img src="images/chart.png"/> </div>
+        <div>
+            <p>Comments</p>
+            <img src="images/comments.png"/> </div>
+        <div>
+            <p>Home</p>
+            <img src="images/home.png"/> </div>
+        <div>
+            <p>Computers</p>
+            <img src="images/computers.png"/> </div>
+        <div>
+            <p>Movie track</p>
+            <img src="images/movie_track.png"/> </div>
+        <div>
+            <p>Database</p>
+            <img src="images/database.png"/> </div>
+    </div>
+</div>
+<br>
+Icons by <a href="http://dryicons.com" target="_blank">http://dryicons.com</a>
+</body>
+</html>
