@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Global Variables</title>
+<Script type="text/javascript">
+globalScopeVariable1 = "This is global scope variable declared outside of functions";
+var localScopeVariable1 = "This is local scope variable declared outside of functions";
+function test1(){
+	document.getElementById("g1").innerHTML = globalScopeVariable1;
+	document.getElementById("l1").innerHTML = localScopeVariable1;
+	globalScopeVariable2 = "This is global scope variable declared inside a function";
+	var localScopeVariable2 = "This is local scope variable declared inside a function";
+	window.myVariable = "Another method of using global variables as stored objects";
+	test2();
+}
+function test2(){
+	document.getElementById("g2").innerHTML = globalScopeVariable2;
+	document.getElementById("g3").innerHTML = window.myVariable;
+	document.getElementById("l2").innerHTML = localScopeVariable2;
+}
+window.onload = function(){
+	test1();
+};
+</script>
+</head>
+<body >
+<p style="font-weight:bold;">Global Variable declared outside of any function is called inside a function:</p>
+<span id="g1"></span>
+<p style="font-weight:bold;">Local Variable declared outside of any function is called inside a function:</p>
+<span id="l1"></span>
+<p style="font-weight:bold;">Global Variable declared inside a function is called from another function:</p>
+<span id="g2"></span>
+<p style="font-weight:bold;">You can also store in global objects. </p>
+<span id="g3"></span>
+<p style="font-weight:bold;">Local Variable declared inside a function is called from another function: (This will not get the value and you will get this error "ReferenceError: localScopeVariable2 is not defined".)</p>
+<span id="l2"></span>
+</body>
+</html>
